@@ -1,0 +1,20 @@
+@startuml
+component start
+component calibrate
+component connect
+component "connected ?"
+component measure
+component send
+
+start -down->calibrate
+calibrate -down-> connect
+connect -down-> "connected ?"
+"connected ?" -up-> (no)
+(no) -> connect
+"connected ?" -down-> (yes)
+(yes) -down-> measure
+measure -down-> send
+send -> (wait 10 ms)
+(wait 10 ms) -> "connected ?"
+
+@enduml
