@@ -140,6 +140,18 @@ void measureJoystick() {
   xValue = constrain(map(rawX, xMin, xMax, 0, 4095), 0, 4095);
   yValue = constrain(map(rawY, yMin, yMax, 0, 4095), 0, 4095);
   
+
+  // define a dead zone
+  int deadZoneMargin=300;
+  if ((xValue >= xMax/2 - deadZoneMargin) && (xValue <= xMax/2 + deadZoneMargin)) {
+    xValue = xMax/2;
+  }
+
+  if ((yValue >= yMax/2 - deadZoneMargin) && (yValue <= yMax/2 + deadZoneMargin)) {
+    yValue = yMax/2;
+  }
+
+
   // Read button (inverted because of pullup)
   buttonState = !digitalRead(pinSW);
 }
