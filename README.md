@@ -37,7 +37,7 @@ A wireless joystick controller that sends UDP packets over WiFi, designed for ES
    - Power the ESP32 via USB or an external power source
 
 2. **WiFi Configuration**:
-   - The ESP32 creates an access point named `AP-UDP-Receiver` with password `12345678`
+   - The ESP32 connects to an access point named `AP-UDP-Receiver` with password `12345678`
    - Default UDP port: `12345`
    - Broadcast address: `192.168.4.255`
 
