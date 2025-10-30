@@ -3,13 +3,13 @@
 #include <Arduino.h>
 
 // WiFi credentials
-const char* ssid = "YOUR_SSID";
-const char* password = "YOUR_PASSWORD";
+const char* ssid = "AP-UDP-Receiver";
+const char* password = "12345678";
 
 // UDP settings
 WiFiUDP udp;
 const int udpPort = 12345;
-const char* targetIP = "192.168.1.255"; // Broadcast address
+const char* targetIP = "192.168.4.255"; // Broadcast address
 
 // Joystick pins
 const int pinX = 34;  // X-axis pin (GPIO34)
@@ -28,7 +28,7 @@ int buttonState = 0;
 
 // Timing
 unsigned long lastSendTime = 0;
-const long sendInterval = 10; // 10ms interval (100Hz)
+const long sendInterval = 100; // 100ms interval (10Hz)
 
 void setup() {
   Serial.begin(115200);
@@ -83,7 +83,7 @@ void calibrateJoystick() {
     yMin = min(yMin, y);
     yMax = max(yMax, y);
     
-    delay(10);
+    delay(100);
   }
   
   // Add some margin to min/max values
