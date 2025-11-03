@@ -158,7 +158,7 @@ void measureJoystick() {
 
 void sendJoystickData() {
   // Create a string with joystick data
-  String data = String(xValue) + "," + String(yValue) + "," + String(buttonState);
+  String data = String(xValue) + " " + String(yValue) + " " + String(buttonState);
   
   // Send UDP packet
   udp.beginPacket(targetIP, udpPort);
