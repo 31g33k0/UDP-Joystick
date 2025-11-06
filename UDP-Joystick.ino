@@ -12,6 +12,7 @@ const int udpPort = 12345;
 const char* targetIP = "192.168.4.255"; // Broadcast address
 
 // Joystick pins
+const int ledPin = 2; // LED pin (GPIO2)
 const int pinX = 34;  // X-axis pin (GPIO34)
 const int pinY = 35;  // Y-axis pin (GPIO35)
 const int pinSW = 16; // Switch/button pin (GPIO16)
@@ -32,13 +33,16 @@ const long sendInterval = 100; // 100ms interval (10Hz)
 
 void setup() {
   Serial.begin(115200);
+  pinMode(ledPin, OUTPUT);  // Configure la broche LED en sortie
   pinMode(pinSW, INPUT_PULLUP);
   
   // 1. Start
   Serial.println("Starting UDP Joystick...");
   
   // 2. Calibrate
+  digitalWrite(ledPin, HIGH);
   calibrateJoystick();
+  digitalWrite(ledPin, LOW);
   
   // 3. Connect to WiFi
   connectToWiFi();
