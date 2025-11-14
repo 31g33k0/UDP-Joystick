@@ -57,6 +57,7 @@ A wireless joystick controller that sends UDP packets over WiFi, designed for ES
    X: [value], Y: [value], Button: [0/1]
    ```
 5. The data is sent at 10Hz (100ms interval)
+6. The onboard LED will turn on while calibrating and off when done (pin 2)
 
 ## Customization
 
@@ -67,3 +68,8 @@ A wireless joystick controller that sends UDP packets over WiFi, designed for ES
 ## Contributing
 
 Contributions are welcome! Please feel free to submit a Pull Request.
+
+
+## License
+
+GNU General Public License v3.0
