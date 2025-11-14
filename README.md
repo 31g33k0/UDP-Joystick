@@ -62,7 +62,7 @@ A wireless joystick controller that sends UDP packets over WiFi, designed for ES
 ## Customization
 
 - **WiFi Settings**: Modify `ssid`, `password`, and `targetIP` in the code
-- **Sensitivity**: Adjust `calibrationSamples` and `sendInterval` as needed
+- **Sensitivity**: Adjust `calibrationSamples`,`sendInterval` and `deadZone` as needed
 - **Pin Configuration**: Update the pin definitions at the top of the sketch
 
 ## Contributing
